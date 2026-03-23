@@ -1,0 +1,9 @@
+pub mod chip_info;
+pub mod confirm;
+pub mod connection;
+pub mod filesystem;
+pub mod hex_editor;
+pub mod image_manager;
+pub mod log;
+pub mod operations;
+pub mod partitions;

@@ -1,0 +1,23 @@
+[package]
+name = "programmer-gui"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+programmer-hal = { path = "../programmer-hal" }
+programmer-fpga = { path = "../programmer-fpga" }
+programmer-engine = { path = "../programmer-engine" }
+emmc-core = { path = "../../../emmc-gui/crates/emmc-core" }
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+crossbeam-channel.workspace = true
+eframe.workspace = true
+rfd.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+serialport.workspace = true
+
+[features]
+default = ["fifo"]
+fifo = ["programmer-engine/fifo", "programmer-fpga/fifo", "emmc-core/fifo"]

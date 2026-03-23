@@ -1,0 +1,14 @@
+[package]
+name = "emmc-app"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+emmc-core = { path = "../emmc-core" }
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+crossbeam-channel.workspace = true
+
+[features]
+fifo = ["emmc-core/fifo"]

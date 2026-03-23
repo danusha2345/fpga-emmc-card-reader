@@ -1,0 +1,16 @@
+[package]
+name = "programmer-engine"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+programmer-hal = { path = "../programmer-hal" }
+programmer-fpga = { path = "../programmer-fpga" }
+emmc-core = { path = "../../../emmc-gui/crates/emmc-core" }
+anyhow.workspace = true
+tracing.workspace = true
+crossbeam-channel.workspace = true
+serialport.workspace = true
+
+[features]
+fifo = ["programmer-fpga/fifo", "emmc-core/fifo"]

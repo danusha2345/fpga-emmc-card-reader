@@ -1,0 +1,23 @@
+[package]
+name = "emmc-gui"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "emmc-gui"
+path = "src/main.rs"
+
+[dependencies]
+emmc-core = { path = "../emmc-core" }
+emmc-app = { path = "../emmc-app" }
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+crossbeam-channel.workspace = true
+byteorder.workspace = true
+eframe.workspace = true
+rfd.workspace = true
+
+[features]
+default = ["fifo"]
+fifo = ["emmc-app/fifo", "emmc-core/fifo"]

@@ -1,0 +1,25 @@
+[workspace]
+members = ["crates/emmc-core", "crates/emmc-app", "crates/emmc-gui"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+crossbeam-channel = "0.5"
+serialport = "4"
+eframe = "0.33"
+rfd = "0.17"
+byteorder = "1"
+crc = "3"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+base64 = "0.22"
+tempfile = "3"
+hmac = "0.12"
+sha2 = "0.10"

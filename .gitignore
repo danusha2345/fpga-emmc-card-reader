@@ -1,0 +1,34 @@
+impl/
+*.gprj.user
+.venv/
+__pycache__/
+*.pyc
+
+# Large binary files
+*.img
+*.zip
+*.bin
+*.pcapng
+*.pcapng.gz
+*.pdf
+
+# USB capture data (large)
+tools/пакеты_юсб_захвата/
+
+# Icarus Verilog compiled testbenches
+sim/sim_*
+
+# Rust lock file (tool, not library)
+tools/emmc_tool_rs/Cargo.lock
+
+# sbt / Scala
+target/
+project/target/
+project/project/
+.bsp/
+.metals/
+.bloop/
+.idea/
+
+# SpinalHDL simulation workspaces
+simWorkspace/

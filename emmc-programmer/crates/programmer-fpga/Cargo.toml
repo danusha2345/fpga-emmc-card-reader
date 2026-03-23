@@ -1,0 +1,14 @@
+[package]
+name = "programmer-fpga"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+programmer-hal = { path = "../programmer-hal" }
+emmc-core = { path = "../../../emmc-gui/crates/emmc-core" }
+anyhow.workspace = true
+tracing.workspace = true
+serialport.workspace = true
+
+[features]
+fifo = ["emmc-core/fifo"]

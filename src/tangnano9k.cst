@@ -1,0 +1,84 @@
+// Tang Nano 9K (GW1NR-9 QN88P) Pin Constraints
+// eMMC Card Reader Project
+
+// ===========================================================
+// System Clock - 27 MHz oscillator
+// ===========================================================
+IO_LOC  "clk_27m" 52;
+IO_PORT "clk_27m" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+// ===========================================================
+// UART (FT2232HL external module, Channel B, 3.3V)
+// Pin 25 (IOB8A) = TX out to FT2232HL BDBUS1 (RXD)
+// Pin 26 (IOB8B) = RX in from FT2232HL BDBUS0 (TXD)
+// ===========================================================
+IO_LOC  "uart_tx" 25;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC  "uart_rx" 26;
+IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ===========================================================
+// LEDs (active low on Tang Nano 9K)
+// ===========================================================
+IO_LOC  "led[0]" 10;
+IO_PORT "led[0]" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC  "led[1]" 11;
+IO_PORT "led[1]" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC  "led[2]" 13;
+IO_PORT "led[2]" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC  "led[3]" 14;
+IO_PORT "led[3]" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC  "led[4]" 15;
+IO_PORT "led[4]" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+IO_LOC  "led[5]" 16;
+IO_PORT "led[5]" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+// ===========================================================
+// Buttons (active low, directly on FPGA)
+// ===========================================================
+IO_LOC  "btn_s1" 3;
+IO_PORT "btn_s1" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+IO_LOC  "btn_s2" 4;
+IO_PORT "btn_s2" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+// ===========================================================
+// eMMC Interface (BANK3, 1.8V — direct eMMC with VCC=VCCQ=1.8V)
+// ===========================================================
+
+// eMMC CLK - Output only
+// Pin 82 (IOT11[A], Bank 3)
+IO_LOC  "emmc_clk" 82;
+IO_PORT "emmc_clk" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+// eMMC RST_n - Output only (active low reset)
+// Pin 81 (IOT11[B], Bank 3)
+IO_LOC  "emmc_rstn" 81;
+IO_PORT "emmc_rstn" IO_TYPE=LVCMOS18 PULL_MODE=NONE DRIVE=8;
+
+// eMMC CMD - Bidirectional, internal pull-up to 1.8V
+// Pin 79 (IOT12[B], Bank 3)
+IO_LOC  "emmc_cmd" 79;
+IO_PORT "emmc_cmd" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
+
+// eMMC DAT0 - Bidirectional, internal pull-up to 1.8V
+// Pin 80 (IOT12[A], Bank 3)
+IO_LOC  "emmc_dat0" 80;
+IO_PORT "emmc_dat0" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
+
+// eMMC DAT1-3 for 4-bit mode (Bank 3, 1.8V)
+// Pin 83 (IOT10[B]) = DAT1
+// Pin 84 (IOT10[A]) = DAT2
+// Pin 85 (IOT9[B])  = DAT3
+IO_LOC  "emmc_dat1" 83;
+IO_PORT "emmc_dat1" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
+IO_LOC  "emmc_dat2" 84;
+IO_PORT "emmc_dat2" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
+IO_LOC  "emmc_dat3" 85;
+IO_PORT "emmc_dat3" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;

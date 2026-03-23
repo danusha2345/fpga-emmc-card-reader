@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../ublox_fake_rust"
+		},
+		{
+			"path": "../../2uart_to_1uart"
+		},
+		{
+			"path": "../../uart_logger"
+		},
+		{
+			"path": "../../uart_term"
+		}
+	],
+	"settings": {}
+}
